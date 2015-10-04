@@ -50,6 +50,7 @@
                 return {
                     name: d.Country,
                     GDP: +d['GDP per Capita'].replace("$","").replace(",",""),
+                    GDPstring: d['GDP per Capita'],
                     Year: new Date(d.Year).getYear() + 1900
                 }
             });
@@ -66,7 +67,7 @@
             });
             console.log(country);
             
-            return (country.length == 1) ? (name + ": $" + country[0].GDP.toString()) : "NA";
+            return (country.length == 1) ? (name + ": " + country[0].GDPstring) : "NA";
         }
 
         function getCountry() {
